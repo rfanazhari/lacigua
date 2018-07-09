@@ -1,0 +1,25 @@
+Options All -Indexes
+Options +FollowSymlinks
+
+<FilesMatch "\.env|\.env.example|\.gitattributes|\.gitignore|\.htaccess|artisan|composer.json|composer.lock|gulpfile.js|package.json|phpunit.xml|yarn.lock|public">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    # RewriteBase /yourfolder # If in sub folder root in linux
+
+    RewriteRule ^(.*)assets/(.*) resources/assets/$2
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

@@ -1,0 +1,32 @@
+.colorred {
+	color: red;
+}
+
+.wrap-popup .box-popup .titlenew {
+	line-height: 60px;
+    background-color: #000;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding-left: 0px;
+    font-family: "robotoboldcondensed";
+}
+
+.wrap-popup .box-popup .titlenew .closepop {
+	padding-right: 5px;
+	position: absolute;
+    right: 10px;
+    top: -10px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'robotocondensed';
+    cursor: pointer;
+}
+
+.wrap-popup .box-popup .contentnew {
+	padding: 20px;
+    font-size: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
